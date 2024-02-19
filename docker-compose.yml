@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    container_name: bezkoder_db
+    restart: always
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: postgres
+#    volumes:
+#      - local_pgdata:/var/lib/postgr sql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: bezkoder_pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: a@a.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+#    volumes:
+#      - pgadmin-data:/var/lib/pgadmin
+
